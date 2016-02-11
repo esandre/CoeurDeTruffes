@@ -1,0 +1,24 @@
+<?php
+if(!isset($this->layout) || $this->layout == true){
+    echo $this->doctype();
+    $scripts = require(SCRIPT_PATH . '/includes.php');
+    foreach($scripts as $script) $this->headScript()->appendFile($script);
+    ?>
+    <html>
+    <head>
+        <?php echo $this->headTitle() ?>
+        <?php echo $this->headLink() ?>
+        <?php echo $this->headStyle() ?>
+        <?php echo $this->headScript() ?>
+    </head>
+    <body>
+        <?php echo $this->partial("partials/banner.phtml"); ?>
+        <?php echo $this->partial("partials/topbar.phtml"); ?>
+        <section id="content"><?php echo $this->layout()->content ?></section>
+        <?php echo $this->partial("partials/footer.phtml"); ?> 
+    </body>
+    </html>
+<?php
+}
+else echo $this->layout()->content;
+?>

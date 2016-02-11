@@ -1,0 +1,23 @@
+<?php
+/**
+ * Vue Backend Login Prompt
+ * Formulaire de login pour la partie Backend
+ * @author : kryzaal
+ * @package : Truffes
+ */
+ 
+/* Initialisation du translator */
+$translator = new Zend_View_Helper_Translate();
+?>
+
+<!-- Message de titre -->
+<h2><?=$translator->translate("adduser_title")?></h2>
+
+
+<?php if(!empty($this->error)):?>
+<!-- En cas d'erreur -->
+    <p><?=$translator->translate($this->error)?></p>
+<?php endif ?>
+
+<!-- Le formulaire -->
+<?= $this->form ?>

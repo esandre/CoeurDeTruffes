@@ -1,0 +1,17 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of production
+ *
+ * @author kryzaal
+ */
+class production {
+    //put your code here
+}
+
+?>

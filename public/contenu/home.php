@@ -1,0 +1,1 @@
+<div class="accroche"><h2>Lorem ipsum dolor sit amet</h2><span>Vestibulum in eros vitae urna varius mattis. Sed imperdiet porta lectus, at elementum lorem malesuada et..</span></div>

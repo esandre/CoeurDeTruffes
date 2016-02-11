@@ -1,0 +1,103 @@
+/*Structure*/
+
+body{
+    min-width: 1024px;
+    min-height: 768px;
+    background-color: #D0D0D0;
+}
+
+header{
+    float: left;
+    width: 198px;
+    height: 100px;
+}
+
+nav#mainmenu{
+    float: left;
+    height: 100px;
+    min-width: 600px;
+}
+
+section#content{
+    float: left;
+    width:  100%;
+    min-height: 450px;
+    min-width: 675px;
+    padding-right: 5px;
+}
+
+/*-----------------------------FOOTER-----------------------------*/
+
+header img{
+    /**min-width: 100px;
+    min-height: 100px;**/
+}
+
+/*-----------------------------FOOTER-----------------------------*/
+
+footer{
+    width: 100%;
+    min-height: 25px;
+    min-width: 800px;
+    clear: both;
+}
+
+/*Les liens du footer*/
+footer a{
+    color: #333333;
+    text-decoration: none;
+}
+
+/*Les span, ici utilisés comme separateur*/
+footer span{
+    margin-left : 2%;
+}
+
+/*--------------------------ENCYCLOPEDIE--------------------------*/
+
+#encyclopedie article
+{
+    float : left;
+    width : 40%;
+    min-width : 400px;
+    height : 600px;
+    background-color : rgba(125,125,125,0.3);
+    margin : 15px;
+}
+
+#encyclopedie aside
+{
+    float: left;
+    width: 600px;
+    min-height: 600px;
+    background-color: #AAAAAA;
+    margin: 15px;
+}
+
+#encyclopedie table
+{
+    
+}
+
+#encyclopedie tr
+{
+    clear : both;
+    height : 15%;
+    min-height : 180px;
+}
+
+#encyclopedie td
+{
+    background-color: #CCCCCC;
+    height : 180px;
+    width : 180px;
+    margin : 10px;
+}
+
+#encyclopedie td:hover
+{
+    background-color: #DDDDDD;
+    height : 180px;
+    width : 180px;
+    margin : 10px;
+}

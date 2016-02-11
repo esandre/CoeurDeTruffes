@@ -1,0 +1,34 @@
+<h2>Backoffice - Param&eacute;trage des textes semi-statiques ( abouts )</h2>
+<a
+    href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "index",
+        "action" => "index"))?>"
+>
+    <img src="<?=$this->resources['returnButton']?>" alt="Menu Backoffice Unlog"/>
+</a>
+
+<h3>Menu</h3>
+
+<ul>
+    <li><a href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "about",
+        "action" => "about"))?>">A propos</a>
+    </li>
+    <li><a href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "about",
+        "action" => "cgv"))?>">Conditions g&eacute;n&eacute;rales de vente</a>
+    </li>
+    <li><a href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "about",
+        "action" => "fonctionnement"))?>">Fonctionnement de CdT</a>
+    </li>
+    <li><a href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "about",
+        "action" => "legal"))?>">Mentions l&eacute;gales</a>
+    </li>
+</ul>

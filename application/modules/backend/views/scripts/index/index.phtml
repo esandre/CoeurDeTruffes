@@ -1,0 +1,21 @@
+<?php
+/**
+ * Vue Backend Index Index
+ * Le index du backoffice, différent selon les droits.
+ * En cas d'acces non autorisé le dispatcher renvoie vers le prompt de login
+ * @author : kryzaal
+ * @package : Truffes
+ */
+ 
+/* Initialisation du translator */
+$translator = new Zend_View_Helper_Translate();
+?>
+
+<!-- Bloc titre -->
+<h1>Interface d'administration du site Coeur de Truffes</h1>
+<h2>Acc&eacute;s <?=$translator->translate(!empty($this->groupName)?$this->groupName:"--???--")?></h2>
+
+<!-- Liste liens -->
+<?php foreach($this->links as $key=>$link):?>
+    <a href="<?=$link?>"><?=$key?></a><br/>
+<?php endforeach; ?>

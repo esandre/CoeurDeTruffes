@@ -1,0 +1,44 @@
+<h2>Backoffice - Edition de l'about</h2>
+<a
+    href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "about",
+        "action" => "index"))?>"
+>
+    <img src="<?=$this->resources['returnButton']?>" alt="Menu Backoffice Unlog About"/>
+</a>
+
+<br/><br/>
+
+<a
+    href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "about",
+        "action" => "add-fonctionnement",
+        "scratch" => true))?>"
+>
+    <img src="<?=$this->resources['returnButton']?>" alt="Remplacer par de nouveaux Fonctionnement"/>
+</a>
+
+<a
+    href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "about",
+        "action" => "add-fonctionnement"))?>"
+>
+    <img src="<?=$this->resources['returnButton']?>" alt="Nouvelle version basée sur ce set"/>
+</a>
+
+
+<h3>Dernier About</h3>
+
+<h4><?=$this->actual->getDate()?></h4>
+<table>
+    <caption>Traductions</caption>
+    <?php foreach($this->locales as $locale): ?>
+    <tr>
+    <td><b><?=$locale?></b></td>
+    <td><p><?=$this->actual->getText($locale)?></p></td>
+    </tr>
+    <?php endforeach; ?>
+</table>

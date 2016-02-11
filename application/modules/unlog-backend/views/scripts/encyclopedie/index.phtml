@@ -1,0 +1,123 @@
+<?php
+if(empty($this->heads)){
+    throw new Zend_View_Exception("Thead strings are empty !");
+}
+?>
+<h2>Backoffice - Param&eacute;trage de l'encyclopedie</h2>
+<a
+    href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "index",
+        "action" => "index"))?>"
+>
+    <img src="<?=$this->resources['returnButton']?>" alt="Menu Backoffice Unlog"/>
+</a>
+
+<h3>Menu</h3>
+
+<!--
+-- Bouton pour ajouter un article
+-->
+<a
+    href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "encyclopedie",
+        "action" => "add-article"))?>"
+>
+    <img src="<?=$this->resources['addButton']?>" alt="Ajouter un article"/>
+</a>
+
+<!--
+-- Tableau principal
+-->
+<table>
+    <caption>Liste des articles</caption>
+    <!--
+    -- Entete
+    -->
+        <thead><tr>
+            <?php
+                foreach($this->heads as $head){
+                    echo "<td>$head</td>";
+                }
+            ?>
+        </tr></thead>
+        <tbody>
+            <?php
+            foreach ($this->content as $article):
+            ?>
+            <tr>
+                <?php
+                foreach($this->heads as $key => $head){
+                    echo "<td>";
+                    switch($key){
+                        case 'actions':
+                            ?>
+                            <a
+                                href="<?=$this->url(array(
+                                    "module" => "unlog-backend",
+                                    "controller" => "encyclopedie",
+                                    "action" => "modif-article",
+                                    "id" => $article->getId()))?>"
+                            >
+                                <img src="<?=$this->resources['modifButton']?>" alt="Modifier"/>
+                            </a>
+                            <a
+                                href="<?=$this->url(array(
+                                    "module" => "unlog-backend",
+                                    "controller" => "encyclopedie",
+                                    "action" => "del-article",
+                                    "id" => $article->getId()))?>"
+                            >
+                                <img src="<?=$this->resources['deleteButton']?>" alt="Supprimer"/>
+                            </a>
+                            <a
+                                href="<?=$this->url(array(
+                                    "module" => "unlog-backend",
+                                    "controller" => "encyclopedie",
+                                    "action" => "toggle-article-status",
+                                    "id" => $article->getId()))?>"
+                            >
+                                <img
+                                    src="<?=$article->getActive() ? $this->resources['desactivateButton'] : $this->resources['activateButton']?>"
+                                    alt="<?=$article->getActive() ? "D&eacute;sactiver" : "Activer"?>"
+                                />
+                            </a>
+                            <?php
+                            break;
+                        case 'date':
+                            echo $article->getDate();
+                            break;
+                        case 'active':
+                            echo $article->getActive();
+                            break;
+                        default:
+                            if(substr($key, 0, 5) == 'text_'){
+                                echo substr($article->getText(substr($key, 5)), 0, 64);
+                            }
+                            if(substr($key, 0, 6) == 'titre_'){
+                                echo $article->getTitre(substr($key, 6));
+                            }
+                            break;
+                    }
+                    echo "</td>";
+                }
+                ?>
+            </tr>
+            <?php
+            endforeach;
+            ?>
+        </tbody>
+</table>
+
+<!--
+-- Bouton pour ajouter un article
+-->
+<a
+    href="<?=$this->url(array(
+        "module" => "unlog-backend",
+        "controller" => "encyclopedie",
+        "action" => "add-article"))?>"
+>
+    <img src="<?=$this->resources['addButton']?>" alt="Ajouter un article"/>
+</a>
